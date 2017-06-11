@@ -34,7 +34,7 @@ public class TaskTabController implements Initializable {
                 b.setMinHeight(60);
                 b.setMinWidth(60);
                 b.setOnMouseClicked((MouseEvent e) -> {
-                    String api = "http://91.241.186.117/api/rest/task_controller/persons_by_task/1";
+                    String api = "http://localhost:8080/api/rest/task_controller/persons_by_task/1";
                     String api2 = "http://localhost:8080/api/rest/task_controller/save";
                     String api3 = "http://localhost:8080/api/rest/task_controller/tasks_by_person/1";
 
@@ -45,6 +45,9 @@ public class TaskTabController implements Initializable {
                     List<TaskDTO> taskByPerson = new ArrayList<>();
                     taskByPerson = doGET(api3, taskByPerson.getClass());
                     System.out.println(taskByPerson);
+                    System.out.println();
+                    System.out.println("========");
+                    System.out.println();
 
                     /*
                         делаем пост этих данных как List
@@ -53,18 +56,23 @@ public class TaskTabController implements Initializable {
                     Response response = client
                             .target(api2)
                             .request(MediaType.APPLICATION_JSON)
-                            .post(Entity.json(taskByPerson));
+                            //.header("Content-Type", "application/json; charset=utf-8")
+                            .post(Entity.entity(taskByPerson, "application/json; charset=UTF-8"));
                     List<TaskDTO> list = response.readEntity(new GenericType<List<TaskDTO>>() {
                     });
                     System.out.println(list);
-
+                    System.out.println();
+                    System.out.println("========");
+                    System.out.println();
 
                     /*
                     сделал generic который делает GET
                      */
                     List<PersonDTO> list1 = new ArrayList<>();
                     System.out.println(doGET(api, list1.getClass()));
-
+                    System.out.println();
+                    System.out.println("========");
+                    System.out.println();
 
                     /*
                     тот же дженерик, но для получения одного объекта, а не списка
@@ -72,6 +80,9 @@ public class TaskTabController implements Initializable {
 
                     TaskDTO task = doGET("http://localhost:8080/api/rest/task/1", TaskDTO.class);
                     System.out.println("TASK: " + task);
+                    System.out.println();
+                    System.out.println("========");
+                    System.out.println();
                 });
                 tasksGridPane.add(b, j, i);
             }
