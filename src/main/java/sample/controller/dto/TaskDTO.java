@@ -7,9 +7,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class TaskDTO {
     private Integer id;
     private Date date;
+    @XmlElement
+    private ClientDTO client;
     @XmlElement
     private ContractDTO contract;
     @XmlElement
@@ -36,6 +39,14 @@ public class TaskDTO {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public ClientDTO getClient() {
+        return client;
+    }
+
+    public void setClient(ClientDTO client) {
+        this.client = client;
     }
 
     public ContractDTO getContract() {
@@ -99,6 +110,7 @@ public class TaskDTO {
         return "TaskDTO{" +
                 "id=" + id +
                 ", date=" + date +
+                ", client=" + client +
                 ", contract=" + contract +
                 ", serviceType=" + serviceType +
                 ", serviceDate=" + serviceDate +

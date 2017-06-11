@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.TileController">
+   <children>
+      <ImageView fx:id="ImgViiew" fitHeight="101.0" fitWidth="103.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="labelStatus" layoutX="110.0" layoutY="6.0" text="Status" wrapText="true" />
+      <Label fx:id="lServiceDate" layoutX="112.0" layoutY="34.0" text="ServiceDate" />
+      <Label fx:id="lEndingDate" layoutX="112.0" layoutY="51.0" text="EndingDate" />
+      <Label fx:id="lPriority" layoutX="15.0" layoutY="110.0" text="Приоритет" wrapText="true" />
+      <Label fx:id="lClientName" layoutX="9.0" layoutY="135.0" prefHeight="45.0" prefWidth="218.0" text="Имя клиента" wrapText="true" />
+      <Label fx:id="lServiceName" layoutX="6.0" layoutY="172.0" prefHeight="45.0" prefWidth="218.0" text="Имя сервиса" wrapText="true" />
+   </children>
+</AnchorPane>
