@@ -6,17 +6,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by Milaya on 22.12.2017.
+ * DateFormatter
  */
 public class DateAdapter extends XmlAdapter<String, Date> {
     @Override
     public Date unmarshal(String v) throws Exception {
-        DateFormat fmt = new SimpleDateFormat("dd-MMM-yyyy");
-        mapper.setDateFormat(fmt);
+        DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        return fmt.parse(v);
     }
 
     @Override
     public String marshal(Date v) throws Exception {
-        return null;
+        DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        return fmt.format(v);
     }
 }

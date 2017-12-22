@@ -1,9 +1,12 @@
 package sample.controller.dto;
 
+import sample.controller.adapters.DateAdapter;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Date;
 
 @XmlRootElement
@@ -11,9 +14,11 @@ import java.util.Date;
 public class ContractDTO {
     private Integer id;
     private String num;
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private Date date;
     @XmlElement
     private ClientDTO client;
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private Date endingDate;
 
     public Integer getId() {
