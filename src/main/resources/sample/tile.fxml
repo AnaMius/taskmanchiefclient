@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -7,14 +8,43 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.TileController">
+
+<VBox fx:id="container" prefHeight="265.0" prefWidth="220.0" spacing="10.0" style="-fx-background-color: #cbe3fb;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.TileController">
    <children>
-      <ImageView fx:id="ImgViiew" fitHeight="101.0" fitWidth="103.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="labelStatus" layoutX="110.0" layoutY="6.0" text="Status" wrapText="true" />
-      <Label fx:id="lServiceDate" layoutX="112.0" layoutY="34.0" text="ServiceDate" />
-      <Label fx:id="lEndingDate" layoutX="112.0" layoutY="51.0" text="EndingDate" />
-      <Label fx:id="lPriority" layoutX="15.0" layoutY="110.0" text="Приоритет" wrapText="true" />
-      <Label fx:id="lClientName" layoutX="9.0" layoutY="135.0" prefHeight="45.0" prefWidth="218.0" text="Имя клиента" wrapText="true" />
-      <Label fx:id="lServiceName" layoutX="6.0" layoutY="172.0" prefHeight="45.0" prefWidth="218.0" text="Имя сервиса" wrapText="true" />
+      <HBox spacing="5.0">
+         <children>
+            <ImageView fx:id="ImgViiew" fitHeight="101.0" fitWidth="103.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox alignment="CENTER_RIGHT" prefHeight="102.0" prefWidth="122.0" spacing="15.0">
+               <children>
+                  <Label fx:id="labelStatus" layoutX="110.0" layoutY="6.0" text="Status" wrapText="true" />
+                  <VBox alignment="CENTER_RIGHT">
+                     <children>
+                        <Label fx:id="lServiceDate" layoutX="112.0" layoutY="34.0" text="ServiceDate" textAlignment="RIGHT" />
+                        <Label fx:id="lEndingDate" layoutX="112.0" layoutY="51.0" text="EndingDate" />
+                     </children>
+                  </VBox>
+                  <Label fx:id="lPriority" layoutX="15.0" layoutY="110.0" text="Приоритет" wrapText="true" />
+               </children>
+               <padding>
+                  <Insets left="6.0" right="6.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox>
+         <children>
+            <Label text="Клиент" underline="true" />
+            <Label fx:id="lClientName" alignment="TOP_LEFT" layoutX="9.0" layoutY="135.0" prefHeight="49.0" prefWidth="215.0" text="Имя клиента" wrapText="true" />
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <Label text="Тип услуги" underline="true" />
+            <Label fx:id="lServiceName" alignment="TOP_LEFT" layoutX="6.0" layoutY="172.0" prefHeight="39.0" prefWidth="208.0" text="Имя сервиса" wrapText="true" />
+         </children>
+      </VBox>
    </children>
-</AnchorPane>
+   <padding>
+      <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+   </padding>
+</VBox>

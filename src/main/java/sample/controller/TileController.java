@@ -3,6 +3,7 @@ package sample.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 /**
  * @author <a href="mailto:maxim.simonenko@masterpayment.com"/>Maxim Simonenko.
@@ -30,6 +31,9 @@ public class TileController {
 
     @FXML
     private Label labelStatus;
+
+    @FXML
+    private VBox container;
 
     public Label getlPriority() {
         return lPriority;
@@ -85,5 +89,13 @@ public class TileController {
 
     public void setLabelStatus(Label labelStatus) {
         this.labelStatus = labelStatus;
+    }
+
+    public VBox getContainer() {
+        return container;
+    }
+
+    public void setContainer(VBox container) {
+        this.container = container;
     }
 }

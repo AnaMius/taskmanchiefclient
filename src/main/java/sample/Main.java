@@ -10,8 +10,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-//        Parent root = FXMLLoader.load(getClass().getResource("/sample/mainWindow.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/tileContainer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/mainWindow.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("/sample/tileContainer.fxml"));
         primaryStage.setTitle("Менеджер назначений");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(true);

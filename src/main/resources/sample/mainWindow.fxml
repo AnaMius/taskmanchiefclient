@@ -9,17 +9,18 @@
 <?import javafx.scene.control.Label?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-         prefHeight="629.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
-  <tabs>
-    <Tab text="Назначения сотрудников">
-      <content>
-        <fx:include fx:id="tasksTab" source="tasksTab.fxml"/>
-      </content>
-    </Tab>
-    <Tab text="Отчёты">
-      <content>
-        <fx:include fx:id="reportsTab" source="reportsTab.fxml"/>
-      </content>
-    </Tab>
-  </tabs>
+         prefHeight="629.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1"
+         xmlns="http://javafx.com/javafx/8">
+    <tabs>
+        <Tab text="Назначения сотрудников">
+            <content>
+                <fx:include fx:id="tasksTab" source="tasksTab.fxml"/>
+            </content>
+        </Tab>
+        <Tab text="Отчёты">
+            <content>
+                <fx:include fx:id="reportsTab" source="reportsTab.fxml"/>
+            </content>
+        </Tab>
+    </tabs>
 </TabPane>
